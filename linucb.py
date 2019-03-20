@@ -59,15 +59,13 @@ class LinUCB():
         return best_a
     
     def reward(self, action, dose):
-        self.frac[action] += 1/len(self.data)
-        
         if action == dose:
             return 0
+        
         else:
             return -1
     
     def run(self):
-        self.frac = {'low': 0, 'mid': 0, 'high': 0}
         
         for features, dose in self.data:
             print(self.t)
