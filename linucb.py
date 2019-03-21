@@ -85,3 +85,9 @@ class LinUCB():
             self.t += 1
             self.total_regret -= reward
             self.regret.append(self.total_regret)
+
+if __name__ == '__main__':
+    random.shuffle(dataset_3)
+    alg = LinUCB(dataset=dataset_3, alpha=0.01)
+    alg.run()
+    plt.plot(alg.regret)
